@@ -5,3 +5,22 @@
         .env        ->  Almacena variables de entorno
         .gitignore  ->  Para ignorar achivos
         README.md   ->  Archivo README
+
+2 Repositorio:
+    Desde github web
+        Crear Repositorio
+    Desde local
+        Conectar Repositorio y hacer primer commit
+
+3 Crear cluster en mongodb atlas
+    Crear cluster
+    Crear usuario y clave
+
+4 Configurar conexion a mongodb en db.ts
+    Crear archivo de configuracion de bd
+    Crear .env para almacenar URI y puerto de bd
+    Instalar dependencias de desarrollo con "npm install -D ts-node-dev"
+    Inicializar node en backend e instalar demas dependencias
+    Probar la conexion
+
+5 
