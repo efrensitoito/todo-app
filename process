@@ -1,0 +1,7 @@
+1 Directorios:
+    todo-test
+        backend     ->  Para achivos del backend
+        frontend    ->  Para achivos del backend
+        .env        ->  Almacena variables de entorno
+        .gitignore  ->  Para ignorar achivos
+        README.md   ->  Archivo README
