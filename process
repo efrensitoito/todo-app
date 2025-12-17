@@ -22,5 +22,9 @@
     Instalar dependencias de desarrollo con "npm install -D ts-node-dev"
     Inicializar node en backend e instalar demas dependencias
     Probar la conexion
+    Probar con un endpoint /health desde navegador
 
-5 
+5 Creacion de modelo de Task
+    Usando model, Schema y Document de mongoose
+
+6 
