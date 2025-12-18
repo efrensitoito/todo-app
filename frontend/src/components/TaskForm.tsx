@@ -47,7 +47,7 @@ export const TaskForm = ({ onTaskCreated }: TaskFormProps) => {
           ¡Tarea creada con éxito!
           <div
             className={`toast-progress-bar ${
-              !t.visible || t.paused ? "pau-animation" : ""
+              !t.visible || (t as any).paused ? "pau-animation" : ""
             }`}
           />
         </span>

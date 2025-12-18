@@ -64,7 +64,7 @@ export const TasksPage = () => {
           Tarea eliminada
           <div
             className={`toast-progress-bar ${
-              !t.visible || t.paused ? "pau-animation" : ""
+              !t.visible || (t as any).paused ? "pau-animation" : ""
             }`}
             style={{ backgroundColor: "#f44336" }} // Rojo para eliminar
           />
