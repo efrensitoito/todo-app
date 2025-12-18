@@ -1,0 +1,20 @@
+/* Animación para que la barra se encoja de 100% a 0% */
+@keyframes shrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* Clase para la barra de progreso en el toast */
+.toast-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: #4caf50; /* Color verde para éxito */
+  animation: shrink 4000ms linear forwards;
+}
+
+/* Si el toast se pausa (hover), la animación también se pausa */
+.pau-animation {
+  animation-play-state: paused !important;
+}

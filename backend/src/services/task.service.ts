@@ -34,14 +34,16 @@ export class TaskService {
     return !!result;
   }
 
-  static async markAsCompleted(
+  static async toggleTaskStatus(
     taskId: string,
     userId: string
   ): Promise<ITask | null> {
-    return await Task.findOneAndUpdate(
-      { _id: taskId, userId },
-      { completed: true },
-      { new: true }
-    );
+    const task = await Task.findOne({ _id: taskId, userId });
+
+    if (!task) return null;
+
+    task.completed = !task.completed;
+
+    return await task.save();
   }
 }

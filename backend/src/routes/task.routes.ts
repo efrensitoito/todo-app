@@ -10,7 +10,7 @@ router.use(authMiddleware);
 router.post('/', TaskController.createTask);
 router.get('/', TaskController.getTasks);
 router.put('/:id', TaskController.updateTask);
-router.delete('/:id', TaskController.deleteTask);
-router.patch('/:id/complete', TaskController.markAsCompleted);
+router.delete('/:id', authMiddleware, TaskController.deleteTask);
+router.patch('/:id/toggle', authMiddleware, TaskController.toggleCompleted);
 
 export default router;

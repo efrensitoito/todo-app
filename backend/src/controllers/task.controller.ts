@@ -82,7 +82,7 @@ export class TaskController {
     }
   }
 
-  static async markAsCompleted(req: Request, res: Response) {
+  static async toggleCompleted(req: Request, res: Response) {
     try {
       const { id } = req.params;
       const userId = req.user?.id;
@@ -91,7 +91,7 @@ export class TaskController {
         return res.status(401).json({ message: "User not found in request" });
       }
 
-      const task = await TaskService.markAsCompleted(id, userId);
+      const task = await TaskService.toggleTaskStatus(id, userId);
 
       if (!task) {
         return res.status(404).json({ message: "Task not found" });
