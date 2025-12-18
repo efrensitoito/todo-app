@@ -7,6 +7,10 @@ export class TaskController {
       const { title, description } = req.body;
       const userId = req.user?.id;
 
+      if (!userId) {
+        return res.status(401).json({ message: "User not found in request" });
+      }
+
       if (!title) {
         return res.status(400).json({ message: "Title is required" });
       }
@@ -26,6 +30,9 @@ export class TaskController {
   static async getTasks(req: Request, res: Response) {
     try {
       const userId = req.user?.id;
+      if (!userId) {
+        return res.status(401).json({ message: "User not found in request" });
+      }
       const tasks = await TaskService.getTaskByUser(userId);
       return res.status(200).json(tasks);
     } catch (error) {
@@ -37,6 +44,10 @@ export class TaskController {
     try {
       const { id } = req.params;
       const userId = req.user?.id;
+      
+      if (!userId) {
+        return res.status(401).json({ message: "User not found in request" });
+      }
 
       const task = await TaskService.updateTask(id, userId, req.body);
 
@@ -55,6 +66,10 @@ export class TaskController {
       const { id } = req.params;
       const userId = req.user?.id;
 
+      if (!userId) {
+        return res.status(401).json({ message: "User not found in request" });
+      }
+
       const deleted = await TaskService.deleteTask(id, userId);
 
       if (!deleted) {
@@ -71,6 +86,10 @@ export class TaskController {
     try {
       const { id } = req.params;
       const userId = req.user?.id;
+
+      if (!userId) {
+        return res.status(401).json({ message: "User not found in request" });
+      }
 
       const task = await TaskService.markAsCompleted(id, userId);
 

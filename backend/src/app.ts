@@ -13,7 +13,7 @@ app.use(express.json());
 // Health check endpoint
 app.get("/health", async (req, res) => {
   try {
-    res.status(200).json({ status: "ok", message: "Server and DB Running!" });
+    res.status(200).json({ status: "ok" });
   } catch (error) {
     res.status(500).json({ status: "ok", message: "Server with no health!!" });
   }
