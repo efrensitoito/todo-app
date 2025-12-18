@@ -34,7 +34,7 @@ export class TaskService {
     return !!result;
   }
 
-  static async MarkAsCompleted(
+  static async markAsCompleted(
     taskId: string,
     userId: string
   ): Promise<ITask | null> {

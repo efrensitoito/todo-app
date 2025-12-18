@@ -28,3 +28,7 @@
     Usando model, Schema y Document de mongoose
 
 6 
+
+7 Auth Middleware configurado
+    Archivo auth.middleware.ts
+    Archivo tsconfig modificado para incluir src
